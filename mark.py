@@ -1139,6 +1139,9 @@ def make_code_block(lines, start):
 
 def markdown_to_html(markdown):
 
+    # Fresh placeholder list for each conversion
+    _PLACEHOLDERS.clear()
+
     lines = markdown.splitlines()
 
     output = []

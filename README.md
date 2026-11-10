@@ -14,7 +14,34 @@ ClickUp doesn't render pasted Markdown well, especially tables. This script conv
 pip install -r requirements.txt
 ```
 
-## Usage
+## Download (no Python needed)
+
+Download [`release/MarkdownToClickUp.exe`](release/MarkdownToClickUp.exe) and double-click it.
+
+> Windows may show a SmartScreen warning because the exe isn't code-signed. Click **More info → Run anyway**.
+
+## Desktop app
+
+```bash
+python app.py
+```
+
+A window opens where you can:
+
+1. Click **Open .md file…** to load a file, or paste Markdown into the text box
+2. Click **Copy for ClickUp** (or press `Ctrl + Enter`)
+3. Press `Ctrl + V` in a ClickUp Doc
+
+### Build a standalone .exe (optional)
+
+```bash
+pip install pyinstaller
+pyinstaller --onefile --windowed --name MarkdownToClickUp app.py
+```
+
+The app will be in `dist/MarkdownToClickUp.exe`. You can double-click it, and Python doesn't need to be installed.
+
+## Command line
 
 Pass the Markdown file as an argument:
 

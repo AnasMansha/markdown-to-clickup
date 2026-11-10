@@ -4,18 +4,6 @@ Paste Markdown files into ClickUp Docs with formatting intact.
 
 ClickUp doesn't render pasted Markdown well, especially tables. This script converts a `.md` file into the rich HTML that ClickUp's editor understands and puts it on your clipboard. Then you just press `Ctrl + V` in ClickUp.
 
-## Features
-
-- Headings (`#` to `######`)
-- **Bold**, *italic*, ***bold italic***, `inline code`
-- Links and images
-- Bullet and numbered lists, including nested ones
-- Blockquotes
-- Code blocks
-- Horizontal rules
-- Tables, converted to native ClickUp tables with a colored header row and Markdown formatting inside cells
-- Backslash escapes (`\~`, `\*`, `\|`, ...) and `<br>` line breaks
-
 ## Requirements
 
 - Windows (it uses the Windows clipboard)

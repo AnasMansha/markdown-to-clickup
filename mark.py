@@ -719,8 +719,8 @@ def make_clickup_table(rows):
                 "colspan": "1"
             }
 
-            # First row = header
-            if row_number == 1:
+            # First row = header (empty HEADER_COLOR = no color)
+            if row_number == 1 and HEADER_COLOR:
 
                 attributes[
                     "cell-bg-color"
@@ -807,7 +807,7 @@ def make_clickup_table(rows):
 
             bg = ""
 
-            if is_header:
+            if is_header and HEADER_COLOR:
 
                 bg = (
                     ' data-cell-bg-color="'

@@ -29,8 +29,9 @@ python app.py
 A window opens where you can:
 
 1. Click **Open .md file…** to load a file, or paste Markdown into the text box
-2. Click **Copy for ClickUp** (or press `Ctrl + Enter`)
-3. Press `Ctrl + V` in a ClickUp Doc
+2. Optionally pick a **Table header color** (or `None`)
+3. Click **Copy for ClickUp** (or press `Ctrl + Enter`)
+4. Press `Ctrl + V` in a ClickUp Doc
 
 ### Build a standalone .exe (optional)
 

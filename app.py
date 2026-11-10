@@ -9,7 +9,23 @@ import tkinter as tk
 from pathlib import Path
 from tkinter import filedialog, messagebox, ttk
 
+import mark
 from mark import copy_to_clipboard, markdown_to_html
+
+
+# Table header colors offered in the dropdown.
+# You can also type any other color name ClickUp accepts.
+HEADER_COLORS = [
+    "orange",
+    "red",
+    "yellow",
+    "green",
+    "blue",
+    "purple",
+    "pink",
+    "gray",
+    "None",
+]
 
 
 class App(tk.Tk):
@@ -84,6 +100,23 @@ class App(tk.Tk):
             command=self.convert
         ).pack(side="right")
 
+        # Table header color
+        self.header_color = tk.StringVar(
+            value=mark.HEADER_COLOR or "None"
+        )
+
+        ttk.Combobox(
+            bottom,
+            textvariable=self.header_color,
+            values=HEADER_COLORS,
+            width=10
+        ).pack(side="right", padx=(0, 12))
+
+        ttk.Label(
+            bottom,
+            text="Table header color:"
+        ).pack(side="right", padx=(0, 4))
+
         # Ctrl+Enter = convert
         self.bind("<Control-Return>", lambda e: self.convert())
 
@@ -140,6 +173,14 @@ class App(tk.Tk):
         if not markdown.strip():
             self.set_status("Nothing to convert.", "red")
             return
+
+        color = self.header_color.get().strip()
+
+        mark.HEADER_COLOR = (
+            ""
+            if color.lower() in ("", "none")
+            else color
+        )
 
         try:
             html = markdown_to_html(markdown)
